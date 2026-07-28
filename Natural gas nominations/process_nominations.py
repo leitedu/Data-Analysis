@@ -28,11 +28,8 @@ def update_nominations_db(update_file, db_path):
     totals.dropna(subset=totals.columns[1], inplace=True)
 
     # Consolidates with historical Database
-    if db_path.exists():
-        db = pd.read_excel(db_path)
-        db = pd.concat([db, totals], ignore_index=True).drop_duplicates(subset=['FECHA'], keep='last')
-    else:
-        db = totals.copy()
+    db = pd.read_excel(db_path)
+    db = pd.concat([db, totals], ignore_index=True).drop_duplicates(subset=['FECHA'], keep='last')
 
     db.to_excel(db_path, index=False)
 
@@ -41,9 +38,9 @@ def update_nominations_db(update_file, db_path):
 def daily_nominations_chart(db, output_graph):
     '''Generates summary chart of last 7 days nominations volumes'''
 
-    # Extracts last 7 days summary table and format numbers using .map()
+    # Extracts last 7 days summary tabl
     table = db.tail(7).copy()
-    table.iloc[:, 1:] = table.iloc[:, 1:].map('{:,.2f}'.format)
+    table.iloc[:, 1:] = table.iloc[:, 1:]
     table['FECHA'] = pd.to_datetime(table['FECHA']).dt.normalize()
 
     # Generates Stackplot for Nomination in Mutun point (Entry in Brazilian gas transport system from Bolivia)
