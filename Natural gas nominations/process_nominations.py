@@ -75,7 +75,8 @@ DB_PATH = 'data/nominations_history.xlsx'       # Historical nominations databas
 OUTPUT_GRAPH = 'outputs/daily_chart.png'         # Generated output chart
 
 if __name__ == "__main__":
-
+    # 1. Ingest, clean, and merge daily data into master DB
     db = update_nominations_db(UPDATE_FILE, DB_PATH)
 
+    # 2. Extract series and generate stackplot chart
     daily_nominations_chart(db, OUTPUT_GRAPH)
