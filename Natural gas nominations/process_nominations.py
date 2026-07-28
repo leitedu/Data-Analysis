@@ -45,7 +45,7 @@ def daily_nominations_chart(db, output_graph):
 
     # Generates Stackplot for Nomination in Mutun point (Entry in Brazilian gas transport system from Bolivia)
     colunas_mutun = ['FECHA'] + [col for col in db.columns if 'Mutun' in col] # Selects date (fecha in spanish) and columns with 'Mutun'
-    table_mutun = db[colunas_mutun].copy()
+    table_mutun = table[colunas_mutun].copy()
     table_mutun = table_mutun.drop(columns=table_mutun.filter(regex='BRASIL').columns) # Removes contract named "BRASIL"
 
     # Renames columns to short names
