@@ -56,8 +56,8 @@ def daily_nominations_chart(db, output_graph):
     # Plot
     data_cols = [col for col in table_mutun.columns if col != 'DATE']
     plt.figure(figsize=(15, 8), dpi=120)
-    plt.stackplot(table_mutun['DATE'], data_cols.values.T.tolist(),
-                    labels=data_cols.columns.tolist())
+    plt.stackplot(table_mutun['DATE'], table_mutun[data_cols].values.T,
+                    labels=data_cols)
     plt.title('Mutun nominations', fontsize=20 ,fontweight="bold")
     plt.legend(loc='upper left')
     plt.ylabel('Volume - MMm³', fontsize=14)
