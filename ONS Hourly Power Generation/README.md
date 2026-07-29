@@ -28,7 +28,7 @@ CEG stands for *Código Único de Empreendimentos de Geração* (Generation Faci
 
 
 **How to find a plant's CEG:**
-1. Go to the **[SIGA ANEEL Portal]([https://siga.aneel.gov.br/](https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/11ec447d-698d-4ab8-977f-b424d5deee6a))** (Sistema de Informações de Geração da ANEEL - ANEEL's Generation Information System).
+1. Go to the **[SIGA ANEEL Portal](https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/11ec447d-698d-4ab8-977f-b424d5deee6a)** (Sistema de Informações de Geração da ANEEL - ANEEL's Generation Information System).
 2. Use the search filters (by State, Company, or Plant Name).
 3. Locate the desired power plant in the table and copy the value from the `CEG` column.
 
