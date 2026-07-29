@@ -86,6 +86,7 @@ This automated Python pipeline provides an end-to-end ETL and analytics workflow
 ## 📁 Repository Structure
 ```text
 .
+├── requirements.txt               # Libraries used by the script
 ├── process_nominations.py         # Main script containing ETL logic & chart rendering
 ├── outputs/
 │   └── daily_chart.png            # Generated output stackplot chart
@@ -95,3 +96,4 @@ This automated Python pipeline provides an end-to-end ETL and analytics workflow
 ## 🧰 Tech Stack
 * Pandas: Data cleaning, header manipulation, HTML table export, and time-series deduplication.
 * Matplotlib: Automated generation of stacked area charts (stackplot).
+* Openpyxl: Excel read/write engine for legacy workbook parsing.
