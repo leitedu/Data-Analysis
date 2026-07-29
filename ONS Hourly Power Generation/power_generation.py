@@ -59,9 +59,8 @@ def process_ons_generation(
         final_df['Hour'] = final_df['din_instante'].dt.time
 
         # Reordering columns
-        reindex = ['din_instante', 'Date', 'Hour']
-        reindex = [reindex.append(ceg) for ceg in cegs]
-        final_df = df.reindex(reindex, axis=1)
+        reindex = ['din_instante', 'Date', 'Hour'] + cegs
+        final_df = final_df.reindex(reindex, axis=1)
 
         # Saves final database
         output_file = base_path / f"{output_name}.xlsx"
@@ -74,7 +73,11 @@ def process_ons_generation(
   
 
 def scraper(local_file, file_name, url, cegs, df_list, errors):
-
+    """
+    Verifies if the database file for the given period is already downloaded from ONS and downloads it if necessary.
+    Reads the file, extracts data for the power plants corresponding to the supplied CEG codes, and appends it to the main dataset.
+    Registers errors in the error list if any exception occurs during the process.
+    """
     try:
         # Downloads file from ONS site using Playwright
         if not local_file.exists():
