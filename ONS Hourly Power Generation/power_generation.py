@@ -126,7 +126,8 @@ def scraper(local_file, file_name, url, cegs, df_list, errors):
 
     return df_list, errors
 
-OUTPUT_NAME = 'Teste'
+# Configuration Variables
+OUTPUT_NAME = 'generation_database.xlsx' 
 CEGS = ['UHE.PH.PR.001161-4.01', 'UTN.UR.RJ.000101-5.01'] # CEG examples
 
 if __name__ == "__main__":
