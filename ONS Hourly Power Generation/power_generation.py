@@ -16,7 +16,7 @@ def process_ons_generation(
     filters by specific power plant codes (CEG), and builds a consolidated time-series.
     """
     base_path = Path(output_dir)
-    raw_folder = base_path / "historico_ons"
+    raw_folder = base_path / "ons_historical_data"
     raw_folder.mkdir(parents=True, exist_ok=True)
 
     df_list = []
